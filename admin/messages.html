@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Messages | Smart Pharmacy Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                💊
+            </div>
+
+            <div>
+                <h2>Smart Pharmacy</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a href="dashboard.html">
+                📊
+                <span>Dashboard</span>
+            </a>
+
+            <a href="products.html">
+                📦
+                <span>Products</span>
+            </a>
+
+            <a href="manage-orders.html">
+                🛒 Manage Orders
+            </a>
+
+            <a href="users.html">
+                👥
+                <span>Users</span>
+            </a>
+
+            <a
+                href="messages.html"
+                class="active"
+            >
+                💬
+                <span>Messages</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                onclick="adminLogout()"
+            >
+                🚪
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <h1>
+                    Messages
+                </h1>
+
+                <p>
+                    View customer contact messages.
+                </p>
+
+            </div>
+
+            <div class="admin-topbar-user">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <section class="admin-panel-card">
+
+
+            <div class="admin-page-actions">
+
+                <div>
+
+                    <h2>
+                        Customer Messages
+                    </h2>
+
+                    <p>
+                        Review messages submitted through the Contact page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-product-filters">
+
+                <input
+                    type="text"
+                    id="adminMessageSearch"
+                    placeholder="Search messages..."
+                    onkeyup="filterAdminMessages()"
+                >
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Message</th>
+
+                            <th>Date</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="adminMessagesTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

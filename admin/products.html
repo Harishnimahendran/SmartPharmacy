@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products | Smart Pharmacy Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                💊
+            </div>
+
+            <div>
+                <h2>Smart Pharmacy</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a href="dashboard.html">
+                📊
+                <span>Dashboard</span>
+            </a>
+
+            <a
+                href="products.html"
+                class="active"
+            >
+                📦
+                <span>Products</span>
+            </a>
+
+           <a href="manage-orders.html">
+                    🛒 Manage Orders
+                </a>
+
+            <a href="users.html">
+                👥
+                <span>Users</span>
+            </a>
+
+            <a href="messages.html">
+                💬
+                <span>Messages</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                onclick="adminLogout()"
+            >
+                🚪
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <h1>
+                    Products
+                </h1>
+
+                <p>
+                    Manage pharmacy products and inventory.
+                </p>
+
+            </div>
+
+            <div class="admin-topbar-user">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- Product Controls -->
+
+        <section class="admin-panel-card">
+
+
+            <div class="admin-page-actions">
+
+                <div>
+
+                    <h2>
+                        Product Management
+                    </h2>
+
+                    <p>
+                        Add, edit and manage your products.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="admin-primary-btn"
+                    onclick="openProductModal()"
+                >
+                    + Add Product
+                </button>
+
+            </div>
+
+
+            <div class="admin-product-filters">
+
+                <input
+                    type="text"
+                    id="adminProductSearch"
+                    placeholder="Search products..."
+                    onkeyup="filterAdminProducts()"
+                >
+
+
+                <select
+                    id="adminProductCategory"
+                    onchange="filterAdminProducts()"
+                >
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Medicines">
+                        Medicines
+                    </option>
+
+                    <option value="Vitamins & Supplements">
+                        Vitamins & Supplements
+                    </option>
+
+                    <option value="First Aid">
+                        First Aid
+                    </option>
+
+                    <option value="Personal Care">
+                        Personal Care
+                    </option>
+
+                    <option value="Baby Care">
+                        Baby Care
+                    </option>
+
+                    <option value="Medical Devices">
+                        Medical Devices
+                    </option>
+
+                    <option value="Dental Care">
+                        Dental Care
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Products Table -->
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Category</th>
+
+                            <th>Price</th>
+
+                            <th>Stock</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="adminProductsTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div
+    class="admin-modal"
+    id="productModal"
+>
+
+    <div class="admin-modal-content">
+
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <h2 id="productModalTitle">
+                    Add Product
+                </h2>
+
+                <p>
+                    Enter product information.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                onclick="closeProductModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            id="productForm"
+            onsubmit="saveAdminProduct(event)"
+        >
+
+            <input
+                type="hidden"
+                id="editProductId"
+            >
+
+
+            <div class="admin-form-grid">
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Medicines">
+                            Medicines
+                        </option>
+
+                        <option value="Vitamins & Supplements">
+                            Vitamins & Supplements
+                        </option>
+
+                        <option value="First Aid">
+                            First Aid
+                        </option>
+
+                        <option value="Personal Care">
+                            Personal Care
+                        </option>
+
+                        <option value="Baby Care">
+                            Baby Care
+                        </option>
+
+                        <option value="Medical Devices">
+                            Medical Devices
+                        </option>
+
+                        <option value="Dental Care">
+                            Dental Care
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        min="0"
+                        placeholder="₹0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label>
+                        Stock
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        min="0"
+                        placeholder="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group admin-form-full">
+
+                    <label>
+                        Pack Size
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productPack"
+                        placeholder="Example: 10 Tablets"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-group admin-form-full">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        rows="4"
+                        placeholder="Enter product description"
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-btn"
+                    onclick="closeProductModal()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-btn"
+                >
+                    Save Product
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

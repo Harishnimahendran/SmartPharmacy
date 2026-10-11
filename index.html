@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Pharmacy | Your Trusted Online Pharmacy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">💊</span>
+            <span>Smart Pharmacy</span>
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">Home</a>
+
+            <a href="medicines.html">Medicines</a>
+
+            <a href="categories.html">Categories</a>
+
+            <a href="orders.html">Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="cart.html" title="Cart">
+                🛒
+            </a>
+
+            <a href="profile.html" title="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">YOUR HEALTH, OUR PRIORITY</span>
+
+            <h1>
+                Medicines & Healthcare
+                <span>Made Simple</span>
+            </h1>
+
+            <p>
+                Order genuine medicines and healthcare products
+                from the comfort of your home.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="medicines.html" class="primary-btn">
+                    Shop Medicines
+                </a>
+
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Search -->
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="homeSearch"
+                placeholder="Search medicines, healthcare products..."
+            >
+
+            <button onclick="searchMedicine()">
+                🔍 Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>EXPLORE</span>
+
+                <h2>Shop by Category</h2>
+
+            </div>
+
+            <a href="categories.html">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- Medicines -->
+            <a href="medicines.html?category=medicines"
+               class="category-card">
+
+                <div class="category-icon">
+                    💊
+                </div>
+
+                <h3>Medicines</h3>
+
+                <p>
+                    Essential medicines
+                </p>
+
+            </a>
+
+
+            <!-- Vitamins -->
+            <a href="medicines.html?category=vitamins"
+               class="category-card">
+
+                <div class="category-icon">
+                    🍊
+                </div>
+
+                <h3>Vitamins & Supplements</h3>
+
+                <p>
+                    Health supplements
+                </p>
+
+            </a>
+
+
+            <!-- First Aid -->
+            <a href="medicines.html?category=firstaid"
+               class="category-card">
+
+                <div class="category-icon">
+                    🩹
+                </div>
+
+                <h3>First Aid</h3>
+
+                <p>
+                    Basic first aid essentials
+                </p>
+
+            </a>
+
+
+            <!-- Personal Care -->
+            <a href="medicines.html?category=personal"
+               class="category-card">
+
+                <div class="category-icon">
+                    🧴
+                </div>
+
+                <h3>Personal Care</h3>
+
+                <p>
+                    Daily care products
+                </p>
+
+            </a>
+
+
+            <!-- Baby Care -->
+            <a href="medicines.html?category=baby"
+               class="category-card">
+
+                <div class="category-icon">
+                    🍼
+                </div>
+
+                <h3>Baby Care</h3>
+
+                <p>
+                    Everyday baby essentials
+                </p>
+
+            </a>
+
+
+            <!-- Medical Devices -->
+            <a href="medicines.html?category=devices"
+               class="category-card">
+
+                <div class="category-icon">
+                    🩺
+                </div>
+
+                <h3>Medical Devices</h3>
+
+                <p>
+                    Home healthcare devices
+                </p>
+
+            </a>
+
+
+            <!-- Dental Care -->
+            <a href="medicines.html?category=dental"
+               class="category-card">
+
+                <div class="category-icon">
+                    🦷
+                </div>
+
+                <h3>Dental Care</h3>
+
+                <p>
+                    Everyday oral care
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Featured Products -->
+    <section class="section products-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>POPULAR</span>
+
+                <h2>Featured Products</h2>
+
+            </div>
+
+            <a href="medicines.html">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- Product 1 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    💊
+                </div>
+
+                <span class="product-category">
+                    Medicines
+                </span>
+
+                <h3>
+                    Paracetamol 500mg
+                </h3>
+
+                <p>
+                    10 Tablets
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹25
+                    </strong>
+
+                    <button
+                        type="button"
+                        onclick="addToCart('Paracetamol 500mg', 25)"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    🍊
+                </div>
+
+                <span class="product-category">
+                    Vitamins & Supplements
+                </span>
+
+                <h3>
+                    Vitamin C Tablets
+                </h3>
+
+                <p>
+                    30 Tablets
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹120
+                    </strong>
+
+                    <button
+                        type="button"
+                        onclick="addToCart('Vitamin C Tablets', 120)"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    🩹
+                </div>
+
+                <span class="product-category">
+                    First Aid
+                </span>
+
+                <h3>
+                    Adhesive Bandage
+                </h3>
+
+                <p>
+                    10 Strips
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹40
+                    </strong>
+
+                    <button
+                        type="button"
+                        onclick="addToCart('Adhesive Bandage', 40)"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    🩺
+                </div>
+
+                <span class="product-category">
+                    Medical Devices
+                </span>
+
+                <h3>
+                    Digital Thermometer
+                </h3>
+
+                <p>
+                    Digital
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹250
+                    </strong>
+
+                    <button
+                        type="button"
+                        onclick="addToCart('Digital Thermometer', 250)"
+                    >
+                        Add
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>WHY US</span>
+
+                <h2>
+                    Why Choose Smart Pharmacy?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div>
+                    ✓
+                </div>
+
+                <h3>
+                    Genuine Products
+                </h3>
+
+                <p>
+                    Quality healthcare products from trusted sources.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div>
+                    🚚
+                </div>
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    Get your healthcare products delivered quickly.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div>
+                    🔒
+                </div>
+
+                <h3>
+                    Secure Shopping
+                </h3>
+
+                <p>
+                    Your account and shopping experience are protected.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div>
+                    💬
+                </div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <p>
+                    We're here to help whenever you need us.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="logo">
+
+                    <span>💊</span>
+
+                    <h2>
+                        Smart Pharmacy
+                    </h2>
+
+                </div>
+
+                <p>
+                    Your trusted destination for medicines
+                    and healthcare essentials.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="medicines.html">
+                    Medicines
+                </a>
+
+                <a href="categories.html">
+                    Categories
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉ support@smartpharmacy.com
+                </p>
+
+                <p>
+                    🕒 Mon - Sat: 9 AM - 8 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Smart Pharmacy. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

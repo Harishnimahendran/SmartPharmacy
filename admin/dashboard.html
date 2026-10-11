@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Smart Pharmacy Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body class="admin-page">
+
+    <div class="admin-layout">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="admin-sidebar">
+
+            <div class="admin-brand">
+
+                <div class="admin-brand-icon">
+                    💊
+                </div>
+
+                <div>
+                    <h2>Smart Pharmacy</h2>
+                    <span>Admin Panel</span>
+                </div>
+
+            </div>
+
+
+            <nav class="admin-nav">
+
+                <a
+                    href="dashboard.html"
+                    class="active"
+                >
+                    📊
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a href="products.html">
+                    📦
+                    <span>Products</span>
+                </a>
+
+
+                <a href="manage-orders.html">
+                    🛒
+                    <span>Manage Orders</span>
+                </a>
+
+
+                <a href="users.html">
+                    👥
+                    <span>Users</span>
+                </a>
+
+
+                <a href="messages.html">
+                    💬
+                    <span>Messages</span>
+                </a>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+
+            <div class="admin-sidebar-bottom">
+
+                <button
+                    type="button"
+                    onclick="adminLogout()"
+                >
+                    🚪
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="admin-main">
+
+
+            <!-- ================= TOPBAR ================= -->
+
+            <header class="admin-topbar">
+
+                <div>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Welcome back, Admin
+                    </p>
+
+                </div>
+
+
+                <div class="admin-topbar-user">
+                    👤 Admin
+                </div>
+
+            </header>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <section class="admin-stats">
+
+
+                <!-- USERS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Users
+                        </span>
+
+                        <h2 id="totalUsers">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        📦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Products
+                        </span>
+
+                        <h2 id="totalProducts">
+                            21
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORDERS -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        🛒
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Orders
+                        </span>
+
+                        <h2 id="totalOrders">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REVENUE -->
+
+                <div class="admin-stat-card">
+
+                    <div class="admin-stat-icon">
+                        💰
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Revenue
+                        </span>
+
+                        <h2 id="totalRevenue">
+                            ₹0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= DASHBOARD GRID ================= -->
+
+            <section class="admin-dashboard-grid">
+
+
+                <!-- RECENT ORDERS -->
+
+                <div class="admin-panel-card">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Orders
+                            </h2>
+
+                            <p>
+                                Latest customer orders
+                            </p>
+
+                        </div>
+
+
+                        <a href="manage-orders.html">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div id="dashboardRecentOrders">
+
+                        <div class="admin-empty-state">
+
+                            <div>
+                                📦
+                            </div>
+
+                            <p>
+                                No orders available.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOW STOCK -->
+
+                <div class="admin-panel-card">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <h2>
+                                Low Stock
+                            </h2>
+
+                            <p>
+                                Products that need attention
+                            </p>
+
+                        </div>
+
+
+                        <a href="products.html">
+                            Products
+                        </a>
+
+                    </div>
+
+
+                    <div id="dashboardLowStock">
+
+                        <div class="admin-empty-state">
+
+                            <div>
+                                📦
+                            </div>
+
+                            <p>
+                                No low-stock products.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="admin-panel-card admin-quick-actions">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p>
+                            Common admin tasks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-action-grid">
+
+
+                    <!-- ADD PRODUCT -->
+
+                    <a href="products.html">
+
+                        <span>
+                            ➕
+                        </span>
+
+                        <strong>
+                            Add Product
+                        </strong>
+
+                        <small>
+                            Add a new pharmacy product
+                        </small>
+
+                    </a>
+
+
+                    <!-- MANAGE ORDERS -->
+
+                    <a href="manage-orders.html">
+
+                        <span>
+                            🛒
+                        </span>
+
+                        <strong>
+                            Manage Orders
+                        </strong>
+
+                        <small>
+                            View and update orders
+                        </small>
+
+                    </a>
+
+
+                    <!-- USERS -->
+
+                    <a href="users.html">
+
+                        <span>
+                            👥
+                        </span>
+
+                        <strong>
+                            View Users
+                        </strong>
+
+                        <small>
+                            Manage customer accounts
+                        </small>
+
+                    </a>
+
+
+                    <!-- MESSAGES -->
+
+                    <a href="messages.html">
+
+                        <span>
+                            💬
+                        </span>
+
+                        <strong>
+                            Messages
+                        </strong>
+
+                        <small>
+                            Check customer messages
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>

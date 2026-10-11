@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Orders | Smart Pharmacy Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                💊
+            </div>
+
+            <div>
+                <h2>Smart Pharmacy</h2>
+                <span>Admin Panel</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <a href="dashboard.html">
+                📊
+                <span>Dashboard</span>
+            </a>
+
+            <a href="products.html">
+                📦
+                <span>Products</span>
+            </a>
+
+            <a href="manage-orders.html">
+                    🛒 Manage Orders
+            
+            </a>
+            
+            <a href="users.html">
+                👥
+                <span>Users</span>
+            </a>
+
+            <a href="messages.html">
+                💬
+                <span>Messages</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                onclick="adminLogout()"
+            >
+                🚪
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <header class="admin-topbar">
+
+            <div>
+
+                <h1>
+                    Orders
+                </h1>
+
+                <p>
+                    View and manage customer orders.
+                </p>
+
+            </div>
+
+            <div class="admin-topbar-user">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <section class="admin-panel-card">
+
+
+            <div class="admin-page-actions">
+
+                <div>
+
+                    <h2>
+                        Order Management
+                    </h2>
+
+                    <p>
+                        Review orders and update their status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-product-filters">
+
+                <input
+                    type="text"
+                    id="adminOrderSearch"
+                    placeholder="Search by order ID or customer..."
+                    onkeyup="filterAdminOrders()"
+                >
+
+
+                <select
+                    id="adminOrderStatus"
+                    onchange="filterAdminOrders()"
+                >
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Placed">
+                        Placed
+                    </option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Shipped">
+                        Shipped
+                    </option>
+
+                    <option value="Delivered">
+                        Delivered
+                    </option>
+
+                    <option value="Cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+
+                            <th>Customer</th>
+
+                            <th>Date</th>
+
+                            <th>Payment</th>
+
+                            <th>Total</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="adminOrdersTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- ================= ORDER MODAL ================= -->
+
+<div
+    class="admin-modal"
+    id="orderModal"
+>
+
+    <div class="admin-modal-content admin-order-modal">
+
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <h2>
+                    Order Details
+                </h2>
+
+                <p id="orderModalId">
+                    Order
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                onclick="closeOrderModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="adminOrderDetails">
+
+        </div>
+
+
+        <div class="admin-modal-actions">
+
+            <button
+                type="button"
+                class="admin-secondary-btn"
+                onclick="closeOrderModal()"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/main.js"></script>
+
+</body>
+
+</html>

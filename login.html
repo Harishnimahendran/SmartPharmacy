@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Smart Pharmacy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">💊</span>
+            <span>Smart Pharmacy</span>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="medicines.html">Medicines</a>
+            <a href="categories.html">Categories</a>
+            <a href="orders.html">Orders</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-icons">
+            <a href="cart.html" title="Cart">🛒</a>
+            <a href="profile.html" title="Profile">👤</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         LOGIN / ROLE SECTION
+    ================================= -->
+
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <div class="login-card">
+
+                <!-- LOGO -->
+
+                <div class="login-logo">
+                    <span>💊</span>
+                </div>
+
+
+                <!-- MAIN TITLE -->
+
+                <div class="login-header">
+
+                    <h1>Welcome to Smart Pharmacy</h1>
+
+                    <p>
+                        Please select your account type to continue
+                    </p>
+
+                </div>
+
+
+                <!-- ================================
+                     ROLE SELECTION
+                ================================= -->
+
+                <div id="roleSelection" class="role-selection">
+
+                    <h2>Login As</h2>
+
+                    <div class="role-options">
+
+                        <!-- USER -->
+
+                        <button
+                            type="button"
+                            class="role-card"
+                            onclick="selectLoginRole('user')"
+                        >
+
+                            <div class="role-icon">
+                                👤
+                            </div>
+
+                            <h3>User</h3>
+
+                            <p>
+                                Login or create your account
+                            </p>
+
+                        </button>
+
+
+                        <!-- ADMIN -->
+
+                        <button
+                            type="button"
+                            class="role-card"
+                            onclick="selectLoginRole('admin')"
+                        >
+
+                            <div class="role-icon">
+                                👨‍💼
+                            </div>
+
+                            <h3>Admin</h3>
+
+                            <p>
+                                Access administration panel
+                            </p>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     USER LOGIN
+                ================================= -->
+
+                <div
+                    id="userLoginSection"
+                    class="login-form-section"
+                    style="display: none;"
+                >
+
+                    <button
+                        type="button"
+                        class="back-role-btn"
+                        onclick="backToRoleSelection()"
+                    >
+                        ← Back
+                    </button>
+
+                    <div class="form-section-header">
+
+                        <div class="small-role-icon">
+                            👤
+                        </div>
+
+                        <h2>User Login</h2>
+
+                        <p>
+                            Login to your Smart Pharmacy account
+                        </p>
+
+                    </div>
+
+
+                    <form id="userLoginForm">
+
+                        <!-- EMAIL / PHONE -->
+
+                        <div class="login-form-group">
+
+                            <label for="userLoginEmail">
+                                Email or Phone
+                            </label>
+
+                            <input
+                                type="text"
+                                id="userLoginEmail"
+                                placeholder="Enter email or phone number"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="login-form-group">
+
+                            <label for="userLoginPassword">
+                                Password
+                            </label>
+
+                            <div class="login-password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="userLoginPassword"
+                                    placeholder="Enter your password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    onclick="toggleLoginPassword('userLoginPassword', this)"
+                                >
+                                    👁️
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="login-form-options">
+
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    id="rememberUser"
+                                >
+                                Remember me
+                            </label>
+
+                            <a href="#">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="login-submit-btn"
+                        >
+                            Login
+                        </button>
+
+                    </form>
+
+
+                    <!-- REGISTER -->
+
+                    <div class="register-link">
+
+                        <p>
+                            Don't have an account?
+                            <a href="register.html">
+                                Register
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     ADMIN LOGIN
+                ================================= -->
+
+                <div
+                    id="adminLoginSection"
+                    class="login-form-section"
+                    style="display: none;"
+                >
+
+                    <button
+                        type="button"
+                        class="back-role-btn"
+                        onclick="backToRoleSelection()"
+                    >
+                        ← Back
+                    </button>
+
+                    <div class="form-section-header">
+
+                        <div class="small-role-icon">
+                            👨‍💼
+                        </div>
+
+                        <h2>Admin Login</h2>
+
+                        <p>
+                            Login to the Smart Pharmacy Admin Panel
+                        </p>
+
+                    </div>
+
+
+                    <form id="adminLoginForm">
+
+                        <!-- ADMIN EMAIL -->
+
+                        <div class="login-form-group">
+
+                            <label for="adminLoginEmail">
+                                Admin Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="adminLoginEmail"
+                                placeholder="Enter admin email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ADMIN PASSWORD -->
+
+                        <div class="login-form-group">
+
+                            <label for="adminLoginPassword">
+                                Password
+                            </label>
+
+                            <div class="login-password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="adminLoginPassword"
+                                    placeholder="Enter admin password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    onclick="toggleLoginPassword('adminLoginPassword', this)"
+                                >
+                                    👁️
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="login-submit-btn"
+                        >
+                            Admin Login
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+
+                <h3>💊 Smart Pharmacy</h3>
+
+                <p>
+                    Your trusted online pharmacy for
+                    medicines and healthcare products.
+                </p>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="medicines.html">Medicines</a>
+                <a href="categories.html">Categories</a>
+                <a href="orders.html">Orders</a>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Contact</h3>
+
+                <p>📞 +91 98765 43210</p>
+                <p>📧 support@smartpharmacy.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Smart Pharmacy. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

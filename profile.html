@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - Smart Pharmacy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">💊</span>
+            <span>Smart Pharmacy</span>
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="index.html">Home</a>
+            <a href="medicines.html">Medicines</a>
+            <a href="orders.html">Orders</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="cart.html" title="Cart">🛒</a>
+
+            <a href="profile.html" title="Profile">👤</a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <h1>My Profile</h1>
+
+        <p>Manage your account information</p>
+
+    </section>
+
+
+    <!-- Profile -->
+    <main class="profile-container">
+
+        <div class="profile-card">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <h2 id="profileName">
+                User
+            </h2>
+
+            <p class="profile-role">
+                Smart Pharmacy Customer
+            </p>
+
+
+            <div class="profile-details">
+
+                <div class="profile-detail">
+
+                    <span>👤</span>
+
+                    <div>
+                        <strong>Full Name</strong>
+                        <p id="profileFullName">-</p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span>✉️</span>
+
+                    <div>
+                        <strong>Email</strong>
+                        <p id="profileEmail">-</p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span>📞</span>
+
+                    <div>
+                        <strong>Phone</strong>
+                        <p id="profilePhone">-</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-btn"
+                onclick="logoutUser()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Smart Pharmacy. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

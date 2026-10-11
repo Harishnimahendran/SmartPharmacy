@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details - Smart Pharmacy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-icon">💊</span>
+
+            <span>Smart Pharmacy</span>
+
+        </div>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="medicines.html">
+                Medicines
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <a href="cart.html" title="Cart">
+                🛒
+            </a>
+
+            <a href="profile.html" title="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE HEADER
+    ========================================== -->
+
+    <section class="page-header">
+
+        <h1>Product Details</h1>
+
+        <p>
+            View product information before adding it to your cart.
+        </p>
+
+    </section>
+
+
+    <!-- =========================================
+         PRODUCT DETAILS
+    ========================================== -->
+
+    <main class="medicine-details-container">
+
+        <!-- Product Image -->
+
+        <div class="medicine-detail-image">
+
+            <div id="detailImage">
+                💊
+            </div>
+
+        </div>
+
+
+        <!-- Product Information -->
+
+        <div class="medicine-detail-content">
+
+            <!-- Category -->
+
+            <span
+                id="detailCategory"
+                class="medicine-category">
+                Category
+            </span>
+
+
+            <!-- Product Name -->
+
+            <h2 id="detailName">
+                Product Name
+            </h2>
+
+
+            <!-- Price -->
+
+            <div
+                id="detailPrice"
+                class="medicine-detail-price">
+                ₹0
+            </div>
+
+
+            <!-- Description -->
+
+            <p
+                id="detailDescription"
+                class="medicine-detail-description">
+                Product description will appear here.
+            </p>
+
+
+            <!-- Product Information -->
+
+            <div class="medicine-info-box">
+
+                <div class="medicine-info-row">
+
+                    <span>
+                        Pack Size
+                    </span>
+
+                    <strong id="detailPackInfo">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="medicine-info-row">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="detailCategoryInfo">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="medicine-info-row">
+
+                    <span>
+                        Pack
+                    </span>
+
+                    <strong id="detailPack">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quantity -->
+
+            <div class="quantity-section">
+
+                <h3>
+                    Quantity
+                </h3>
+
+
+                <div class="quantity-control">
+
+                    <button
+                        type="button"
+                        onclick="changeQuantity(-1)">
+                        −
+                    </button>
+
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="changeQuantity(1)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="medicine-action-buttons">
+
+                <button
+                    type="button"
+                    class="add-details-cart-btn"
+                    onclick="addDetailsToCart()">
+
+                    🛒 Add to Cart
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="buy-now-btn"
+                    onclick="buyNow()">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Smart Pharmacy. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
